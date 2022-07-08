@@ -1,16 +1,16 @@
-package com.dawn.grokking.patterns.introduction;
+package com.dawn.grokking.patterns;
 
 import java.util.Arrays;
 
-public class SlidingWindowIntroExample {
+public class AverageSubarrayIntroExample001 {
 
   public static void main(String[] args) {
     int[] arr = new int[] {1, 3, 2, 6, -1, 4, 1, 8, 2};
     int k = 5;
-    double[] res = SlidingWindowIntroExample.averageSubarrayBruteForce(arr, k);
+    double[] res = AverageSubarrayIntroExample001.averageSubarrayBruteForce(arr, k);
     System.out.println("Averages of subarrays of size K using brute force: " + Arrays.toString(res));
 
-    res = SlidingWindowIntroExample.averageSubarrayEfficientSolution(arr, k);
+    res = AverageSubarrayIntroExample001.averageSubarrayEfficientSolution(arr, k);
     System.out.println("Averages of subarrays of size K using efficient solution: " + Arrays.toString(res));
   }
 
