@@ -36,10 +36,11 @@ public class FirstNegativeInEveryWindowSizeK004 {
   public static List<Integer> findFirstNegativeEfficientSolution(int[] arr, int k) {
     int size = arr.length;
     int windowStart = 0, windowEnd = 0;
-    int windowSize = windowEnd - windowStart + 1;
+    int windowSize;
     List<Integer> firstNegatives = new ArrayList<>();
 
     while (windowEnd < size) {
+      windowSize = windowEnd - windowStart + 1;
       if (windowSize < k) {
         windowEnd++;
       } else if (windowEnd - windowStart + 1 == k) {
