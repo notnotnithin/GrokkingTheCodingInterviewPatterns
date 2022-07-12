@@ -13,6 +13,10 @@ public class MaximumSumSubarrayOfSizeK002 {
     System.out.println(
         "Maximum subarray sum of size K using efficient solution is: "
             + MaximumSumSubarrayOfSizeK002.maxSubarraySumEfficient(arr, k));
+
+    System.out.println(
+        "Maximum subarray sum of size K using another solution is: "
+            + MaximumSumSubarrayOfSizeK002.maxSubarraySumUsingAnotherApproach(arr, k));
   }
 
   // brute force - TC - O(N * K) and SC - O(1)
@@ -44,5 +48,27 @@ public class MaximumSumSubarrayOfSizeK002 {
       }
     }
     return maxSum;
+  }
+
+  // Another efficient solution - TC - O(N) and SC - O(1)
+  public static int maxSubarraySumUsingAnotherApproach(int[] arr, int k) {
+    int start = 0, end = 0;
+    int sum = 0;
+    int max = Integer.MIN_VALUE;
+
+    while (end < arr.length) {
+      sum += arr[end];
+
+      if (end - start + 1 < k) {
+        end++;
+      }
+      else if (end - start + 1 == k) {
+        max = Math.max(max, sum);
+        sum -= arr[start];
+        start++;
+        end++;
+      }
+    }
+    return max;
   }
 }
