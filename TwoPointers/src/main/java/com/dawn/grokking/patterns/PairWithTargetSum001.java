@@ -1,6 +1,8 @@
 package com.dawn.grokking.patterns;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PairWithTargetSum001 {
 
@@ -8,11 +10,14 @@ public class PairWithTargetSum001 {
     int[] arr = {1, 2, 3, 4, 6};
     int target = 6;
     System.out.println(
-        "Pair adding up to the target sum is: "
-            + Arrays.toString(PairWithTargetSum001.findPair(arr, target)));
+        "Pair adding up to the target sum using two pointer approach is: "
+            + Arrays.toString(PairWithTargetSum001.findPairByTwoPointersApproach(arr, target)));
+    System.out.println(
+        "Pair adding up to the target sum using a hash map approach is: "
+            + Arrays.toString(PairWithTargetSum001.findPairByHashMapApproach(arr, target)));
   }
 
-  public static int[] findPair(int[] arr, int targetSum) {
+  public static int[] findPairByTwoPointersApproach(int[] arr, int targetSum) {
     int left = 0, right = arr.length - 1;
 
     while (left < right) {
@@ -23,6 +28,19 @@ public class PairWithTargetSum001 {
         right--;
       } else {
         return new int[] {left, right};
+      }
+    }
+    return new int[] {-1, -1};
+  }
+
+  public static int[] findPairByHashMapApproach(int[] arr, int targetSum) {
+    Map<Integer, Integer> map = new HashMap<>();
+
+    for (int i = 0; i < arr.length; i++) {
+      if (map.containsKey(targetSum - arr[i])) {
+        return new int[] {map.get(targetSum - arr[i]), i};
+      } else {
+        map.put(arr[i], i);
       }
     }
     return new int[] {-1, -1};
