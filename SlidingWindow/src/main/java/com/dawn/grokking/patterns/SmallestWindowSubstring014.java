@@ -6,8 +6,8 @@ import java.util.Map;
 public class SmallestWindowSubstring014 {
 
   public static void main(String[] args) {
-    String str = "adobecodebanc";
-    String pattern = "abc";
+    String str = "ADOBECODEBANC";
+    String pattern = "ABC";
     System.out.println(
         "Smallest window substring exists in index: "
             + SmallestWindowSubstring014.findSmallestWindowSubstring(str, pattern));
