@@ -18,6 +18,10 @@ public class PairWithTargetSum001 {
   }
 
   public static int[] findPairByTwoPointersApproach(int[] arr, int targetSum) {
+    if (arr.length < 2) {
+      System.out.println("Array should contain more than 2 data elements.");
+      return new int[] {};
+    }
     int left = 0, right = arr.length - 1;
 
     while (left < right) {
@@ -34,6 +38,10 @@ public class PairWithTargetSum001 {
   }
 
   public static int[] findPairByHashMapApproach(int[] arr, int targetSum) {
+    if (arr.length < 2) {
+      System.out.println("Array should contain more than 2 data elements.");
+      return new int[] {};
+    }
     Map<Integer, Integer> map = new HashMap<>();
 
     for (int i = 0; i < arr.length; i++) {
