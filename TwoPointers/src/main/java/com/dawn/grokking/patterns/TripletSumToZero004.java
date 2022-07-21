@@ -17,6 +17,7 @@ public class TripletSumToZero004 {
   }
 
   public static List<List<Integer>> searchTripletsBruteForce(int[] arr) {
+    Arrays.sort(arr);
     List<List<Integer>> triplets = new ArrayList<>();
     int targetSum = 0;
     for (int i = 0; i < arr.length; i++) {
