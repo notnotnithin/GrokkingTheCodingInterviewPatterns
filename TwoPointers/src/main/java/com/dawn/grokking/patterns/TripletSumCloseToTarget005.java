@@ -6,7 +6,7 @@ public class TripletSumCloseToTarget005 {
 
   public static void main(String[] args) {
     int[] arr = {-2, 0, 1, 2};
-    int targetSum = 3;
+    int targetSum = 2;
     System.out.println(
         "Triplets whose sum equal to zero using brute force approach are: "
             + TripletSumCloseToTarget005.searchTripletsCloseToTarget(arr, targetSum));
