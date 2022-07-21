@@ -21,8 +21,17 @@ public class TripletSumToZero004 {
     List<List<Integer>> triplets = new ArrayList<>();
     int targetSum = 0;
     for (int i = 0; i < arr.length; i++) {
+      if (i > 0 && arr[i] == arr[i - 1]) {
+        continue;
+      }
       for (int j = i + 1; j < arr.length; j++) {
+        if (j > 0 && arr[j] == arr[j - 1]) {
+          continue;
+        }
         for (int k = j + 1; k < arr.length; k++) {
+          if (k > 0 && arr[k] == arr[k - 1]) {
+            continue;
+          }
           if (arr[i] + arr[j] + arr[k] == targetSum) {
             triplets.add(Arrays.asList(arr[i], arr[j], arr[k]));
           }
