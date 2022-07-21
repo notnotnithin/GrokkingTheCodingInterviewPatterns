@@ -13,14 +13,14 @@ public class TripletSumCloseToTarget005 {
   }
 
   public static int searchTripletsCloseToTarget(int[] arr, int targetSum) {
-    Arrays.sort(arr);
+    Arrays.sort(arr); // O(n logn)
     int closestSumToTarget = arr[0] + arr[1] + arr[arr.length - 1];
 
-    for (int i = 0; i < arr.length - 2; i++) {
+    for (int i = 0; i < arr.length - 2; i++) { // O(n)
       int left = i + 1;
       int right = arr.length - 1;
 
-      while (left < right) {
+      while (left < right) { // O(n)
         int currentSum = arr[i] + arr[left] + arr[right];
         if (currentSum > targetSum) {
           right--;
@@ -33,5 +33,6 @@ public class TripletSumCloseToTarget005 {
       }
     }
     return closestSumToTarget;
+    // time complexity: O(n log) + O(n^2) = O(n^2)
   }
 }
