@@ -53,7 +53,7 @@ public class TripletsWithSmallerSum006 {
         int currSum = arr[i] + arr[left] + arr[right];
 
         if (currSum < targetSum) {
-          for (int j = right; j > left; j--)
+          for (int j = right; j > left; j--) // O(n)
             triplets.add(Arrays.asList(arr[right], arr[left], arr[i]));
           left++;
         } else {
@@ -61,7 +61,7 @@ public class TripletsWithSmallerSum006 {
         }
       }
     }
-    // time complexity: O(n.logn)+O(n^2) = O(n^2)
+    // time complexity: O(n.logn)+O(n^3) = O(n^3)
     return triplets;
   }
 }
