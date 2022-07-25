@@ -12,6 +12,9 @@ public class AverageSubarrayIntroExample001 {
 
     res = AverageSubarrayIntroExample001.averageSubarrayEfficientSolution(arr, k);
     System.out.println("Averages of subarrays of size K using efficient solution: " + Arrays.toString(res));
+
+    double result = AverageSubarrayIntroExample001.findMaxAverage(arr, 2);
+    System.out.println("Max average of subarrays of size K is : " + result);
   }
 
   // brute force
@@ -44,5 +47,20 @@ public class AverageSubarrayIntroExample001 {
       }
     }
     return res;
+  }
+
+  public static double findMaxAverage(int[] nums, int k) {
+    double windowSum = 0;
+    double maxAvgSum = Double.NEGATIVE_INFINITY;
+
+    for(int windowEnd = 0; windowEnd < nums.length; windowEnd++) {
+      windowSum += nums[windowEnd];
+
+      if(windowEnd >= k - 1) {
+        maxAvgSum = Math.max(windowSum, maxAvgSum);
+        windowSum -= nums[windowEnd - (k - 1)];
+      }
+    }
+    return maxAvgSum / k;
   }
 }
