@@ -16,6 +16,7 @@
   <modules>
     <module>SlidingWindow</module>
     <module>TwoPointers</module>
+    <module>Fast&amp;SlowPointers</module>
   </modules>
   <name>PatternsOfCoding</name>
   <description>FAANG</description>
