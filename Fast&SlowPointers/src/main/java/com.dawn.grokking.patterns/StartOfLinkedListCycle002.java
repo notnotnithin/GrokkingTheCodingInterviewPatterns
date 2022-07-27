@@ -44,14 +44,11 @@ public class StartOfLinkedListCycle002 {
     ListNode currentNode = slow;
     int cycleLength = 0;
 
-    while (true) {
+    do {
       currentNode = currentNode.next;
       cycleLength += 1;
 
-      if (currentNode == slow) {
-        break;
-      }
-    }
+    } while (currentNode != slow);
     return cycleLength;
   }
 
