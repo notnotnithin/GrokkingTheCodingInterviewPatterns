@@ -1,14 +1,5 @@
 package com.dawn.grokking.patterns;
 
-class ListNode {
-  int value;
-  ListNode next;
-
-  ListNode(int value) {
-    this.value = value;
-  }
-}
-
 public class LinkedListCycle001 {
 
   public static void main(String[] args) {
