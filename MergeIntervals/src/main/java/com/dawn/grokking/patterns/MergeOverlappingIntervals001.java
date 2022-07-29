@@ -23,14 +23,14 @@ public class MergeOverlappingIntervals001 {
     if (intervals.size() < 2) {
       return intervals;
     }
-    Collections.sort(intervals, (a, b) -> Integer.compare(a.start, b.start));
+    Collections.sort(intervals, (a, b) -> Integer.compare(a.start, b.start)); // O(N logN)
     List<Interval> mergedIntervals = new ArrayList<>();
     Iterator<Interval> iteratorPtr = intervals.iterator();
     Interval interval = iteratorPtr.next();
     int start = interval.start;
     int end = interval.end;
 
-    while (iteratorPtr.hasNext()) {
+    while (iteratorPtr.hasNext()) { // O(N)
       interval = iteratorPtr.next();
       if (interval.start <= end) {
         end = Math.max(interval.end, end);
@@ -42,5 +42,6 @@ public class MergeOverlappingIntervals001 {
     }
     mergedIntervals.add(new Interval(start, end));
     return mergedIntervals;
+    // time complexity: O(N * logN) + O(N) = O(N * logN)
   }
 }
