@@ -17,6 +17,7 @@
     <module>SlidingWindow</module>
     <module>TwoPointers</module>
     <module>Fast&amp;SlowPointers</module>
+    <module>MergeIntervals</module>
   </modules>
   <name>PatternsOfCoding</name>
   <description>FAANG</description>
