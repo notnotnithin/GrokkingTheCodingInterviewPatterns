@@ -9,8 +9,8 @@ public class MergeOverlappingIntervals001 {
 
   public static void main(String[] args) {
     List<Interval> input = new ArrayList<>();
-    input.add(new Interval(1, 2));
-    input.add(new Interval(4, 8));
+    input.add(new Interval(1, 5));
+    input.add(new Interval(4, 6));
     input.add(new Interval(7, 9));
 
     System.out.print("Merged intervals: ");
@@ -60,6 +60,8 @@ public class MergeOverlappingIntervals001 {
       interval = iteratorPtr.next();
       if (interval.start <= end) {
         return true;
+      } else {
+        end = Math.max(interval.end, end);
       }
     }
     return false;
