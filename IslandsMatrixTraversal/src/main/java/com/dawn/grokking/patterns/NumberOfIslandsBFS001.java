@@ -45,7 +45,7 @@ public class NumberOfIslandsBFS001 {
     return totalIslands;
   }
 
-  public static void visitIslandBFS(int[][] matrix, int x, int y) {
+  private static void visitIslandBFS(int[][] matrix, int x, int y) {
     Queue<int[]> neighbors = new LinkedList<>();
     neighbors.add(new int[] {x, y});
 
