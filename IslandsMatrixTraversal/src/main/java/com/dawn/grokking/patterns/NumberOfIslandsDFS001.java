@@ -42,7 +42,7 @@ public class NumberOfIslandsDFS001 {
     return totalIslands;
   }
 
-  public static void visitIslandDFS(int[][] matrix, int x, int y) {
+  private static void visitIslandDFS(int[][] matrix, int x, int y) {
     if (x < 0 || x >= matrix.length || y < 0 || y >= matrix[0].length) {
       return;
     }
