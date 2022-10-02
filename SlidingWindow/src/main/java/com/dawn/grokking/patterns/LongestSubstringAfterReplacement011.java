@@ -6,36 +6,33 @@ import java.util.Map;
 public class LongestSubstringAfterReplacement011 {
 
   public static void main(String[] args) {
-    String str = "abbcb";
+    String str = "abccde";
     int k = 1;
 
     System.out.println(
         "Longest substring count after replacing exactly "
             + k
-            + " characters is: "
-            + LongestSubstringAfterReplacement011.findLongestSubstringCount(str, k));
+            + " characters using efficient solution is: "
+            + LongestSubstringAfterReplacement011.findLongestSubstringCountEfficient(str, k));
   }
 
-  public static int findLongestSubstringCount(String str, int k) {
-    Map<Character, Integer> frequencyMap = new HashMap<>();
-    int windowStart = 0, windowEnd = 0, maxRepeatingCharCount = 0, maxLength = 0;
+  public static int findLongestSubstringCountEfficient(String str, int k) {
+    Map<Character, Integer> fMap = new HashMap<>();
+    int windowStart = 0, maxRepeatCharCount = 0, maxLen = 0;
 
-    while (windowEnd < str.length()) {
+    for (int windowEnd = 0; windowEnd < str.length(); windowEnd++) {
       char rightChar = str.charAt(windowEnd);
-      frequencyMap.put(rightChar, frequencyMap.getOrDefault(rightChar, 0) + 1);
+      fMap.put(rightChar, fMap.getOrDefault(rightChar, 0) + 1);
 
-      if ((windowEnd - windowStart + 1 - maxRepeatingCharCount) < k) {
-        windowEnd++;
-      } else if ((windowEnd - windowStart + 1 - maxRepeatingCharCount) == k) {
-        maxRepeatingCharCount = Math.max(maxRepeatingCharCount, frequencyMap.get(rightChar));
-        windowEnd++;
-      } else {
-        char leftChar = str.charAt(windowEnd);
-        frequencyMap.put(leftChar, frequencyMap.get(leftChar) - 1);
+      maxRepeatCharCount = Math.max(maxRepeatCharCount, fMap.get(rightChar));
+
+      if (windowEnd - windowStart + 1 - maxRepeatCharCount > k) {
+        char leftChar = str.charAt(windowStart);
+        fMap.put(leftChar, fMap.get(leftChar) - 1);
         windowStart++;
       }
-      maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
+      maxLen = Math.max(maxLen, windowEnd - windowStart + 1);
     }
-    return maxLength;
+    return maxLen;
   }
 }
