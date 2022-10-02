@@ -7,8 +7,29 @@ public class LongestSubarrayOfOnesAfterReplacement012 {
     int k = 2;
 
     System.out.println(
+        "Longest subarray count of ones after replacement using efficient solution is: "
+            + LongestSubarrayOfOnesAfterReplacement012.findLongestSubarrayOfOnesEfficient(arr, k));
+
+    System.out.println(
         "Longest subarray count of ones after replacement is: "
             + LongestSubarrayOfOnesAfterReplacement012.findLongestSubarrayOfOnes(arr, k));
+  }
+
+  public static int findLongestSubarrayOfOnesEfficient(int[] arr, int k) {
+    int windowStart = 0, maxLen = 0, maxOnesCount = 0;
+
+    for (int windowEnd = 0; windowEnd < arr.length; windowEnd++) {
+      if (arr[windowEnd] == 1)
+        maxOnesCount++;
+
+      if (windowEnd - windowStart + 1 - maxOnesCount > k) {
+        if (arr[windowStart] == 1)
+          maxOnesCount--;
+        windowStart++;
+      }
+      maxLen = Math.max(maxLen, windowEnd - windowStart + 1);
+    }
+    return maxLen;
   }
 
   public static int findLongestSubarrayOfOnes(int[] arr, int k) {
