@@ -19,6 +19,7 @@
     <module>Fast&amp;SlowPointers</module>
     <module>MergeIntervals</module>
     <module>IslandsMatrixTraversal</module>
+    <module>PatternsPrinting</module>
   </modules>
   <name>PatternsOfCoding</name>
   <description>FAANG</description>
