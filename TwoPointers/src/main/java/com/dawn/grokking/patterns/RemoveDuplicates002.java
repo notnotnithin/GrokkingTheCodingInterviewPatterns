@@ -10,10 +10,14 @@ public class RemoveDuplicates002 {
     System.out.println(
         "After removing duplicates array is: " + RemoveDuplicates002.removeDuplicates(arr));
 
-    arr = new int[] {3, 2, 3, 6, 3, 10, 9, 3};
+    arr = new int[] {2, 3, 3, 3, 6, 9, 9};
+        System.out.println(
+            "After removing instances of key the array is: "
+                + RemoveDuplicates002.removeInstancesOfKey(arr, 3));
+
     System.out.println(
-        "After removing instances of key the array is: "
-            + RemoveDuplicates002.removeInstancesOfKey(arr, 3));
+        "After removing duplicates using another solution: "
+            + RemoveDuplicates002.removeDuplicatesSolution2(arr));
   }
 
   public static List<Integer> removeDuplicates(int[] arr) {
@@ -30,6 +34,18 @@ public class RemoveDuplicates002 {
       }
     }
     return res;
+  }
+
+  public static int removeDuplicatesSolution2(int[] arr) {
+    int left = 1;
+
+    for (int right = 1; right < arr.length; right++) {
+      if (arr[right] != arr[right - 1]) {
+        arr[left] = arr[right];
+        left++;
+      }
+    }
+    return left;
   }
 
   public static List<Integer> removeInstancesOfKey(int[] arr, int key) {
