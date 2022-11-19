@@ -3,11 +3,11 @@ package com.dawn.grokking.patterns;
 public class HappyNumber003 {
 
   public static void main(String[] args) {
-    int num = 23;
-    System.out.println("Is " + num + " a happy number? " + HappyNumber003.find(num));
+    int num1 = 23;
+    System.out.println("Is " + num1 + " a happy number? " + HappyNumber003.find(num1));
 
-    num = 12;
-    System.out.println("Is " + num + " a happy number? " + HappyNumber003.find(num));
+    int num2 = 12;
+    System.out.println("Is " + num2 + " a happy number? " + HappyNumber003.find(num2));
   }
 
   public static boolean find(int num) {
