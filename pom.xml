@@ -20,6 +20,7 @@
     <module>MergeIntervals</module>
     <module>IslandsMatrixTraversal</module>
     <module>PatternsPrinting</module>
+    <module>InPlaceLinkedListReversal</module>
   </modules>
   <name>PatternsOfCoding</name>
   <description>FAANG</description>
