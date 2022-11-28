@@ -1,6 +1,6 @@
 package com.dawn.grokking.patterns;
 
-public class SubarraySizeKAndAverageGreaterThanThreshold {
+public class SubarraySizeKAndAverageGreaterThanThreshold16 {
 
   public static void main(String[] args) {
     int[] arr = {11, 13, 17, 23, 29, 31, 7, 5, 2, 3};
@@ -8,7 +8,7 @@ public class SubarraySizeKAndAverageGreaterThanThreshold {
     int t = 4;
     System.out.println(
         "Subarray count with average greater than the threshold are: "
-            + SubarraySizeKAndAverageGreaterThanThreshold.numberOfSubarrayBasedOnACondition(
+            + SubarraySizeKAndAverageGreaterThanThreshold16.numberOfSubarrayBasedOnACondition(
                 arr, k, t));
   }
 
